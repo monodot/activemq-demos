@@ -1,6 +1,6 @@
 # virtual-topics
 
-This Spring Boot Camel example demonstrates the use of Virtual Topics in ActiveMQ.
+This Spring Boot Camel example demonstrates the use of Virtual Topics in ActiveMQ 5._x_.
 
 Virtual Topics are used as a way of allowing multiple load-balancing, competing consumers to subscribe to the same topic. This would not normally be possible under the JMS specification, where a subscription to a topic is for a single subscriber only.
 
