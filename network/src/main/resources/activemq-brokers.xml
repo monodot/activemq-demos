@@ -1,0 +1,61 @@
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:amq="http://activemq.apache.org/schema/core"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+    <!-- Create an embedded ActiveMQ Broker -->
+    <amq:broker brokerName="broker1" useJmx="true" persistent="true">
+
+        <amq:persistenceAdapter>
+            <amq:kahaDB directory="target/data/broker1" journalMaxFileLength="32mb"/>
+        </amq:persistenceAdapter>
+
+        <amq:transportConnectors>
+            <amq:transportConnector name="broker1tcp" uri="tcp://localhost:61616" discoveryUri="multicast://default" />
+        </amq:transportConnectors>
+
+        <amq:networkConnectors>
+            <amq:networkConnector name="broker1connector" uri="multicast://default"/>
+        </amq:networkConnectors>
+
+    </amq:broker>
+
+
+    <!-- Create a second embedded ActiveMQ Broker -->
+    <amq:broker brokerName="broker2" useJmx="true" persistent="true">
+
+        <amq:persistenceAdapter>
+            <amq:kahaDB directory="target/data/broker2" journalMaxFileLength="32mb"/>
+        </amq:persistenceAdapter>
+
+        <amq:transportConnectors>
+            <amq:transportConnector name="broker2tcp" uri="tcp://localhost:61617" discoveryUri="multicast://default" />
+        </amq:transportConnectors>
+
+        <amq:networkConnectors>
+            <amq:networkConnector name="broker2connector" uri="multicast://default" />
+        </amq:networkConnectors>
+
+    </amq:broker>
+
+
+    <!-- Create a third embedded ActiveMQ Broker -->
+    <amq:broker brokerName="broker3" useJmx="true" persistent="true">
+
+        <amq:persistenceAdapter>
+            <amq:kahaDB directory="target/data/broker3" journalMaxFileLength="32mb"/>
+        </amq:persistenceAdapter>
+
+        <amq:transportConnectors>
+            <amq:transportConnector name="broker3tcp" uri="tcp://localhost:61618" discoveryUri="multicast://default" />
+        </amq:transportConnectors>
+
+        <amq:networkConnectors>
+            <amq:networkConnector name="broker3connector" uri="multicast://default" />
+        </amq:networkConnectors>
+
+    </amq:broker>
+
+</beans>
