@@ -6,9 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
 /**
- * Creates a broker, and an ActiveMQ components in Camel.
- * The ActiveMQComponent configures connection pooling automatically.
- * Uses the `failover` URI scheme to define a list of brokers to connect to.
+ * Creates the ActiveMQ components in Camel.
  */
 @Configuration
 @ImportResource("classpath:activemq-brokers.xml")
