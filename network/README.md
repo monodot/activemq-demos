@@ -20,6 +20,8 @@ On startup, each broker discovers others using multicast, and a network is forme
 
     <amq:networkConnector name="broker1connector" uri="multicast://default"/>
 
+The brokers are defined in Spring XML configuration in `resources/activemq-brokers.xml`.
+
 In the application, a new message is pushed every 5 seconds into queue `FOO` on broker A. Two discrete consumers are connected to the same queue `FOO`, on broker B and C respectively. Each message is then consumed exactly once, either by the consumer connected to broker B, or by the consumer connected to broker C.
 
 This demonstrates a message "moving" from broker A, over to broker B or C in the network, when a consumer is connected to those brokers.
