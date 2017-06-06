@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example.activemq</groupId>
-	<artifactId>network</artifactId>
+	<artifactId>conduit-subscriptions</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>network</name>
-	<description>Demo of Network of Brokers in ActiveMQ 5.x</description>
+	<name>conduit-subscriptions</name>
+	<description>Demo of Conduit Subscriptions in ActiveMQ 5.x</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
