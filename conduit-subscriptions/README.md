@@ -40,7 +40,7 @@ Now run the example using:
 
 This will set `conduitSubscription="false"` on the network bridge. This means that a proxy consumer will be created for every queue consumer. This is the opposite of the demo above, where all consumers on a queue on a single broker are consolidated into one subscription. 
 
-The result is that messages are distributed evenly across all **consumers**. Note: this does not mean that the load is balanced all **brokers**. 
+The result is that messages are distributed evenly across all **consumers**. Note: this does not mean that the load is balanced across all **brokers**. 
 
 This extract from the log file shows messages being distributed to each consumer in round-robin fashion:
 
