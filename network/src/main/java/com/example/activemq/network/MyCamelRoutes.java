@@ -12,7 +12,7 @@ public class MyCamelRoutes extends RouteBuilder {
         // Sends a message every 5 seconds
         from("timer:foo?period=5000")
                 .setBody(simple("${random(1000,2000)}"))
-                .log(">> Sending stock quote - ${body}")
+                .log(">> Sending stock quote to broker1 - ${body}")
                 .to("amqbroker1:queue:FOO");
 
         from("amqbroker2:queue:FOO")
